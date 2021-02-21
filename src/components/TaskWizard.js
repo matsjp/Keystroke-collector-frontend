@@ -49,6 +49,7 @@ export default function TaskWizard(props){
     }
 
     let currentStep;
+    let currentTaskDisplay = null;
     switch(step){
         case 1:
             if (mobileAndTabletCheck()){
@@ -67,21 +68,27 @@ export default function TaskWizard(props){
                         <Consent changeDisableButton={changeDisableButton} setUserData={setUserData} userData={userData}/>
                 </div>
             }
+            currentTaskDisplay = null;
             break;
         case 2:
             currentStep = <Task task={taskArray[0]} freehand={freehandArray[0]} userData={userData} setUserData={setUserData} changeDisableButton={changeDisableButton} key={step}/>
+            currentTaskDisplay = <p>Task 1 of 4</p>
             break;
         case 3:
             currentStep = <Task task={taskArray[1]} freehand={freehandArray[1]} userData={userData} setUserData={setUserData} changeDisableButton={changeDisableButton} key={step}/>
+            currentTaskDisplay = <p>Task 2 of 4</p>
             break;
         case 4:
             currentStep = <Task task={taskArray[2]} freehand={freehandArray[2]} userData={userData} setUserData={setUserData} changeDisableButton={changeDisableButton} key={step}/>
+            currentTaskDisplay = <p>Task 3 of 4</p>
             break;
         case 5:
             currentStep = <Task task={taskArray[3]} freehand={freehandArray[3]} userData={userData} setUserData={setUserData} changeDisableButton={changeDisableButton} key={step}/>
+            currentTaskDisplay = <p>Task 4 of 4</p>
             break;
         case 6:
             currentStep = <p>This is the end of the study. Thank you for participating</p>
+            currentTaskDisplay = null
             break;
         default:
             currentStep = <p>Error</p>
@@ -89,6 +96,7 @@ export default function TaskWizard(props){
     }
     return (
         <div>
+            {currentTaskDisplay}
             <form onSubmit={handleSubmit}>
             {currentStep}
             {step < 6 && <Button variant="contained" type='submit' value="Submit" disabled={diasbleButton}>Next</Button>}

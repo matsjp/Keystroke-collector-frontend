@@ -34,7 +34,7 @@ export default function KeystrokeInput(props){
 
     return (
         <div>
-          <textarea style={{height: '200px', width: '600px', fontSize: '18px'}} value={textAreaValue} onChange={handleChange} onKeyDown={handleKeyDown} onKeyUp={handleKeyUp} />
+          <textarea style={{height: '150px', width: '600px', fontSize: '18px'}} value={textAreaValue} onChange={handleChange} onKeyDown={handleKeyDown} onKeyUp={handleKeyUp} />
       </div>
     )
 }
