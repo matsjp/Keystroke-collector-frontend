@@ -33,12 +33,14 @@ export default function Task(props){
         instructions = <p>Your task is to copy the text shown above. Please type on your keyboard, do not use copy paste</p>
     }
     return (
-        <div>
+        <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
                 {props.freehand && <img src={props.task.image} alt='Could not load' />}
-                {props.task.description!=null && !props.freehand && <textarea disabled style={{height: '150px', width: '600px', fontSize: '18px'}} value={props.task.description} />}
+                <div style={{width: '600px'}}>
+                {props.task.description!=null && !props.freehand && <textarea disabled style={{height: '200px', width: '600px', fontSize: '18px'}} value={props.task.description} />}
                 {instructions}
                 <KeystrokeInput userData={props.userData} setUserData={props.setUserData} key={props.freehand && props.task.name} updateTextLen={updateTextLen}/>
                 <p>You have typed {textLen} characters out of the minimum requirement of {minLen} characters</p>
+                </div>
         </div>
     );
 }

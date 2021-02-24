@@ -96,11 +96,12 @@ export default function TaskWizard(props){
     }
     return (
         <div>
-            {currentTaskDisplay}
-            <form onSubmit={handleSubmit}>
-            {currentStep}
-            {step < 6 && <Button variant="contained" type='submit' value="Submit" disabled={diasbleButton}>Next</Button>}
-            </form>
+            <div>
+                <form onSubmit={handleSubmit} >
+                {currentStep}
+                {step < 6 && <Button variant="contained" type='submit' value="Submit" disabled={diasbleButton}>Next</Button>}
+                </form>
+            </div>
         </div>
     )
 }
