@@ -64,7 +64,7 @@ export default function TaskWizard(props){
                         and when they are copying down text that they are reading. In this study you will be presented with 4 small typing tasks.
                         In 2 tasks you will be shown an image and your task is to type out a description of the image. In the other 2 tasks you will be 
                         presented with the textual description of an image, and your task is to copy the description. This should take approximately 10 
-                        minutes</p>
+                        minutes. Please type in English</p>
                         <Consent changeDisableButton={changeDisableButton} setUserData={setUserData} userData={userData}/>
                 </div>
             }

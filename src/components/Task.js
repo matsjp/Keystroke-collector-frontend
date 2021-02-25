@@ -27,7 +27,7 @@ export default function Task(props){
 
     let instructions = null;
     if (props.freehand){
-        instructions = <p>Your task is to type a description of the image using at least 300 characters. It's not important what you type as long as you type proper sentences</p>
+        instructions = <p>Your task is to type a description of the image using at least 300 characters. It's not important what you type as long as you type proper sentences. Please type in English</p>
     }
     else{
         instructions = <p>Your task is to copy the text shown above. Please type on your keyboard, do not use copy paste</p>
