@@ -4,11 +4,14 @@ import {dollTask, freedomTask, runawayTask, stayTask} from '../tasks'
 import { mobileAndTabletCheck, mobileCheck, shuffleArray } from '../utils';
 import Button from '@material-ui/core/Button';
 import Consent from './Consent';
-require('dotenv').config();
+//require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 export default function TaskWizard(props){
     const host = process.env.REACT_APP_API_HOST;
-    const apiUrl = 'https://fierce-peak-35449.herokuapp.com/api/keystroke'
+    const apiUrl = process.env.REACT_APP_API_URL
+    console.log(apiUrl)
 
     const [taskArray] = useState(shuffleArray([dollTask, freedomTask, runawayTask, stayTask]));
     const [freehandArray] = useState(shuffleArray([true, true, false, false]));
