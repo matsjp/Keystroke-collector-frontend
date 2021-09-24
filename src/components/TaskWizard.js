@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Task from './Task'
-import {dollTask, freedomTask, runawayTask, stayTask} from '../tasks'
+import {dollTask, freedomTask, runawayTask, stayTask, dateTask, breakfastTask} from '../tasks'
 import { mobileAndTabletCheck, mobileCheck, shuffleArray } from '../utils';
 import Button from '@material-ui/core/Button';
 import Consent from './Consent';
@@ -13,7 +13,7 @@ export default function TaskWizard(props){
     const apiUrl = process.env.REACT_APP_API_URL
     console.log(apiUrl)
 
-    const [taskArray] = useState(shuffleArray([dollTask, freedomTask, runawayTask, stayTask]));
+    const [taskArray] = useState(shuffleArray([dollTask, breakfastTask, runawayTask, dateTask]));
     const [freehandArray] = useState(shuffleArray([true, true, false, false]));
     const [diasbleButton, setDisableButton] = useState(true);
     const [step, setStep] = useState(1);
